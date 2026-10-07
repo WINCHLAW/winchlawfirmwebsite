@@ -46,6 +46,8 @@ page('/404','Page Not Found | Winch Law Firm','Find the firm’s property rights
 shutil.copyfile(OUT/'404/index.html',OUT/'404.html')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml\n')
 (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+origin+('' if p=='/' else p)+'</loc></url>' for p in pages)+'</urlset>')
+subdomain_urls=['https://entergy.winchlawfirm.com/','https://entergybabelwebre.winchlawfirm.com/','https://businesslegal.winchlawfirm.com/']
+(OUT/'subdomains-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+u+'</loc></url>' for u in subdomain_urls)+'</urlset>')
 (OUT/'_redirects').write_text('/entergy-property-rights-review https://entergy.winchlawfirm.com/ 301\n/entergy-rights-review https://entergy.winchlawfirm.com/ 301\n/notifications /book-online 301\n/profile/justin-winch62979/profile / 301\n/privacy.html /privacy 301\n/thank-you.html /thank-you 301\n')
 for src,dest in [('WLF_Eagle_Web_Transparent.webp','eagle.webp'),('WLF_Eagle_Social_Hunter_Green_1200x630.jpg','social.jpg')]:
  source=ROOT/'brand'/src
