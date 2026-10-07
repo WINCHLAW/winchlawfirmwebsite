@@ -1,0 +1,1 @@
+2026-10-07: python build.py passed; python tests/check_site.py passed (11 HTML documents); node --check src-assets/site.js passed. These are source checks, not browser, delivery, or analytics acceptance tests.

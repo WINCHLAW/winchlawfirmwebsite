@@ -1,0 +1,8 @@
+# Winch Law Firm website
+Goal: help Louisiana landowners receiving utility/expropriation notices find useful information and contact the firm. Implement authorized work rather than assigning Justin editor homework.
+Read MIGRATION_STATUS.md first. Update it with dated evidence whenever work changes. Distinguish prepared, committed, deployed, and verified. Do not call migration complete until the launch gates are satisfied.
+Main site: Wix currently; replacement source in this repository, intended Netlify Git deployment. Specialty sites remain separate: https://entergy.winchlawfirm.com/, https://entergybabelwebre.winchlawfirm.com/, https://businesslegal.winchlawfirm.com/.
+Preserve URLs and both published articles. Dedicated expropriation phone +15043772620 must remain separate from general +15045001899. Brand green #123629, gold eagle with shovel, Georgia serif and Arial sans serif. No logo animation or fullscreen splash.
+Build: python build.py. Check: python tests/check_site.py; node --check src-assets/site.js.
+Before deployment verify canonical/schema/social URLs against published locations, internal/external links, assets, mobile menu, forms and uploads. Form success must mean server acceptance, not merely button click. Do not send personal form data to analytics. Confirm a synthetic test reaches the firm's configured destination.
+Before domain cutover verify preview, receipt/notifications, GA property and events, existing specialty DNS and email records. Preserve rollback to Wix. Do not change mail/DNS records unrelated to web routing. Do not invent metrics, claim rankings, or add unverified outcome claims.
