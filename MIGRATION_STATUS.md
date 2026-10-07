@@ -1,5 +1,6 @@
 # Migration status — 2026-10-07
 ## Current state
+Source committed to GitHub main at e3b92110d27a70fd794deea4c78da9fbe65e5a10 and confirmed by fetching origin/main. Netlify secure sign-in request returned declined on 2026-10-07; no deployment performed. Resume from authenticated Netlify access, not another rebuild.
 Main live site remains Wix at https://www.winchlawfirm.com/. No DNS or specialty-site changes made.
 Replacement rebuilt as static HTML/CSS/JS; Wix platform internals are not portable source. Existing main-page content and both published articles were retrieved from their live URLs, with sanitized source content in migration/.
 Local build includes ten page routes (eight indexed), preserved article paths, landowner resource, resource directory, functional-form markup, static eagle, mobile menu, absolute share images/canonicals, robots/sitemap, old Entergy path redirects.
