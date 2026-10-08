@@ -1,4 +1,17 @@
 # Migration status — 2026-10-08
+## Verified live update — October 8, 2026, morning
+Netlify plugin and direct HTTPS checks now confirm the main site is published at https://winchlawfirm.com/ on project majestic-cajeta-b5cfbd (50259f63-1a06-4d44-80b1-36fe24a8e725). Production deploy 6ac79c58b81b99000808ed1a published at 2026-10-08T13:36:39Z from WINCHLAW/winchlawfirmwebsite main commit e30abec732b01da371378ef5fa3c0988bbaa2286. Earlier statements below about Wix remaining live and no Netlify plugin are historical and superseded by this evidence. Do not rebuild or re-import the site.
+
+Today's bounded priority is consultation capture: the live /book-online form has Netlify markup, but form processing was disabled and Netlify listed no forms. Enabled Netlify Forms through the authorized plugin; this commit requests a Git-connected rebuild to detect the form. Registration, synthetic submission storage, notification delivery and upload receipt are not yet verified. Do not call the form fully working solely from a 200 response or the enabled setting.
+
+Analytics September 10–October 7 compared with August 13–September 9: requested GA4 property 417150352 completed with no rows; separately connected property 555762522 (Property1) returned 53 sessions, 41 active users, 25 engaged sessions, 47.17% engagement. Its hostname/source/landing report includes 8 google/organic sessions on www.winchlawfirmllc.com and 2 on www.winchlawfirm.com. No consultation/contact key-event rows; all returned key-event counts zero. Prior-period reads completed empty; do not claim percentage growth from those results. This reconciles the native GA activity with the formerly empty specified property. Property1 also includes deploy-preview hostnames; do not call all sessions qualified leads.
+
+Search Console sc-domain:winchlawfirm.com, same recent 28-day range including provisional fresh data: HTTPS www homepage 6 clicks/56 impressions/10.71% CTR/position3.3214; HTTP Babel 1/1/100%/1; HTTP www 0/2/0%/6.5; HTTPS Entergy 0/12/0%/3.6667. Query rows expose 3 clicks for 'justin winch'; anonymized omitted queries prevent classifying all clicks. Prior period returned no rows.
+
+Specialty live checks: Entergy canonical and og:url now correctly https://entergy.winchlawfirm.com/; og:image and twitter:image remain assets/og-cover.png. Babel canonical now correctly https://entergybabelwebre.winchlawfirm.com/, but Open Graph/Twitter tags absent. Dedicated expropriation +15043772620 preserved. Specialty metadata completion remains pending after inquiry-capture repair.
+
+Queue: navigation reported complete October2 and verified October7; do not repeat installation. Main consultation processing repair in progress today; next gate stored synthetic inquiry and firm notification receipt. Specialty social metadata then robots/sitemap verification pending. Eagle adoption remains research-only, no spending/outreach/publication authorized for this sprint.
+
 ## Prepared — West Fork Creek / Project Omega landing page
 Added a verified-information landing page at `/west-fork-creek` describing the West Fork Creek–Boeuf / Project Omega corridor and its related LPSC terminology (West Fork Creek–St. Landry). The page links to LPSC Docket U-37882, Order No. U-37882, public transmission testimony, Entergy’s project announcement, and the available interactive map. The page is prepared and locally checked; it is not yet deployed.
 ## Current state
