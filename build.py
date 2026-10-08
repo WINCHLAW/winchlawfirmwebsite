@@ -2,7 +2,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 import html,json,os,re,shutil
 ROOT=Path(__file__).parent; OUT=ROOT/'public'; OUT.mkdir(exist_ok=True); (OUT/'assets').mkdir(exist_ok=True)
-origin='https://www.winchlawfirm.com'; ga=os.environ.get('GA_MEASUREMENT_ID','')
+origin='https://winchlawfirm.com'; ga=os.environ.get('GA_MEASUREMENT_ID','')
 if ga and not re.fullmatch(r'G-[A-Z0-9]+',ga):raise ValueError('Invalid GA_MEASUREMENT_ID')
 nav=[('Home','/'),('Landowner & Property Rights','/louisiana-landowner-bill-of-rights'),('Entergy & Utility Projects','https://entergy.winchlawfirm.com/'),('Business Legal — Handled.','https://businesslegal.winchlawfirm.com/'),('Resources','/legal-resources'),('Request a Consultation','/book-online')]
 header='<a class="skip" href="#main">Skip to content</a><header><div class="bar"><a class="brand" href="/" aria-label="Winch Law Firm home"><img src="/assets/eagle.webp" width="92" height="76" alt=""><span>WINCH<small>LAW FIRM, LLC</small></span></a><button class="menu" aria-expanded="false" aria-controls="navigation">Menu</button><nav id="navigation" aria-label="Main navigation">'+''.join(f'<a href="{u}">{t}</a>' for t,u in nav)+'</nav></div></header>'
