@@ -6,9 +6,9 @@ for f in root.rglob('*.html'):
  s=BeautifulSoup(f.read_text(),'html.parser');count+=1
  assert s.find('h1'),f'{f}: missing h1'
  assert s.find('main'),f'{f}: missing main'
- canonical=s.find('link',rel='canonical')['href'];assert canonical.startswith('https://www.winchlawfirm.com')
+ canonical=s.find('link',rel='canonical')['href'];assert canonical.startswith('https://winchlawfirm.com')
  assert s.find('meta',property='og:url')['content']==canonical
- for name,attrs in [('og:image',{'property':'og:image'}),('twitter:image',{'name':'twitter:image'})]:assert s.find('meta',attrs=attrs)['content'].startswith('https://www.winchlawfirm.com/assets/')
+ for name,attrs in [('og:image',{'property':'og:image'}),('twitter:image',{'name':'twitter:image'})]:assert s.find('meta',attrs=attrs)['content'].startswith('https://winchlawfirm.com/assets/')
  assert '504-377-2620' in s.get_text() and '504-500-1899' in s.get_text()
  for e in s.find_all(['a','img','script','link']):
   u=e.get('href') or e.get('src') or ''
