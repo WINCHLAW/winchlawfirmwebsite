@@ -1,4 +1,6 @@
-# Migration status — 2026-10-07
+# Migration status — 2026-10-08
+## Prepared — West Fork Creek / Project Omega landing page
+Added a verified-information landing page at `/west-fork-creek` describing the West Fork Creek–Boeuf / Project Omega corridor and its related LPSC terminology (West Fork Creek–St. Landry). The page links to LPSC Docket U-37882, Order No. U-37882, public transmission testimony, Entergy’s project announcement, and the available interactive map. The page is prepared and locally checked; it is not yet deployed.
 ## Current state
 Source committed to GitHub main at e3b92110d27a70fd794deea4c78da9fbe65e5a10 and confirmed by fetching origin/main. Netlify secure sign-in request returned declined on 2026-10-07; no deployment performed. Resume from authenticated Netlify access, not another rebuild.
 Main live site remains Wix at https://www.winchlawfirm.com/. No DNS or specialty-site changes made.
