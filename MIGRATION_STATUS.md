@@ -18,7 +18,7 @@ Verified: processing enabled; consultation form6ac79e68ad0ab40008f63ca1 register
 Synthetic test: POSTed a multipart consultation with a dummy PDF containing no client data, using the firm's own email. HTTP200, request01M4DW7YZBZH9K14GBKH0XX6ZA. Netlify last_submission_at changed to2026-10-08T13:46:31.986Z; verified submission_count remains0. Do not claim verified storage or upload retrieval. Possible spam filtering, not confirmed.
 Outlook search from:formresponses@netlify.com received>=2026-10-08 returned no messages. This does not establish whether notifications are configured.
 Exact remaining blocker: plugin exposes form metadata/count, not submission contents, spam classification, marking verified, or notification settings. Browser is signed out; this scheduled run cannot complete interactive authentication. Next action is inspect this single synthetic test in Forms > consultation > Spam/Verified submissions and verify its PDF and notification destination.
-Concrete done condition: verified stored inquiry with retrievable dummy PDF, and receipt at justin.winch@winchlawfirm.com. Form detection is fixed; end-to-end delivery remains unfinished.
+Concrete done condition: verified stored inquiry with retrievable dummy PDF, and receipt at the firm's configured inbox. Form detection is fixed; end-to-end delivery remains unfinished.
 
 ## Analytics evidence
 Period September11–October8,2026; comparison August14–September10,2026.
@@ -29,14 +29,14 @@ GSC sc-domain:winchlawfirm.com recent period with provisional fresh data:
 - HTTPS Entergy homepage:0 clicks,13 impressions,0% CTR,position3.5385.
 - HTTPS Babel homepage:0 clicks,2 impressions,0% CTR,position8.
 - Historical HTTP Babel homepage:1 click,1 impression,position1; historical HTTP www homepage:0 clicks,2 impressions,position6.5.
-Prior period returned no rows. Query report exposes3 clicks for 'justin winch'; remaining exposed queries are small-volume Abbeville legal terms with no clicks. Omitted/anonymized queries prevent classifying all page-level clicks. No identifiable visitors inferred.
+Prior period returned no rows. Query report exposes3 clicks for 'the firm'; remaining exposed queries are small-volume Abbeville legal terms with no clicks. Omitted/anonymized queries prevent classifying all page-level clicks. No identifiable visitors inferred.
 
 ## Prioritized queue
 1. Main consultation form: repair executed and detection verified today; delivery/upload/spam/notification gate remains unfinished. Carry this gate forward, not repeat enabling detection.
 2. Specialty social metadata: Entergy canonical and og:url now correctly https://entergy.winchlawfirm.com/; live og:image and twitter:image remain assets/og-cover.png. Babel canonical correctly https://entergybabelwebre.winchlawfirm.com/; Open Graph/Twitter tags absent. Prepared older files must be rebased onto latest live source before publishing to preserve October7 intake and Tag Manager changes. Entergy deploy6ac6d565094257480cd322be includes submit-review function and is not Git-backed per commit metadata.
 3. Specialty robots/sitemaps: inspect actual public routes before composing/publishing.
 4. GA property/stream reconciliation and live contact-event verification; do not remove existing Tag Manager based merely on absence of literal G-ID in HTML.
-Navigation: Justin reported complete October2; specialty links verified October7. Do not repeat installation.
+Navigation: the firm reported complete October2; specialty links verified October7. Do not repeat installation.
 Main migration launch gates still pending: desktop/mobile rendering, all preserved routes/assets, end-to-end inquiry and upload receipt, notifications, GA receipt and key events, www/apex routing and preserved DNS/email records. Git deployment now verified.
 
 ## Creative candidate queue — research only
