@@ -22,6 +22,14 @@ for f in root.rglob('*.html'):
   assert contact.get('enctype')=='multipart/form-data';assert contact.find('input',{'name':'document','type':'file'})
 assert (root/'robots.txt').is_file() and (root/'sitemap.xml').is_file()
 assert 'thank-you' not in (root/'sitemap.xml').read_text()
+omega=BeautifulSoup((root/'west-fork-creek/index.html').read_text(),'html.parser')
+assert omega.find('iframe',title=lambda v:v and v.startswith('KLTV video:'))
+assert 'powaEmbed.html' in omega.find('iframe')['src']
+assert 'keep the projects and maps separate' in omega.get_text().lower()
+assert 'power-viz.com/babel-webre' not in omega.get_text()
+news=BeautifulSoup((root/'west-fork-creek/news/index.html').read_text(),'html.parser')
+assert 'Project news' in news.get_text() and 'kltv.com/video/2026/10/03' in str(news)
+
 for slug in ['received-utility-right-of-way-offer-letter-louisiana','should-i-sign-utility-servitude-agreement-louisiana']:
  s=BeautifulSoup((root/'post'/slug/'index.html').read_text(),'html.parser');assert len(s.find('main').get_text())>6000
 print(f'PASS: {count} HTML documents; internal routes/assets, HTTPS links, metadata, both phone lines, form structure, retained articles, crawl files.')
