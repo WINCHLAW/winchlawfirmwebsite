@@ -1,5 +1,5 @@
 # Winch Law Firm website
-Goal: help Louisiana landowners receiving utility/expropriation notices find useful information and contact the firm. Implement authorized work rather than assigning Justin editor homework.
+Goal: help Louisiana landowners receiving utility/expropriation notices find useful information and contact the firm. Implement authorized work rather than assigning editor homework.
 Read MIGRATION_STATUS.md first. Update it with dated evidence whenever work changes. Distinguish prepared, committed, deployed, and verified. Do not call migration complete until the launch gates are satisfied.
 Main site: Wix currently; replacement source in this repository, intended Netlify Git deployment. Specialty sites remain separate: https://entergy.winchlawfirm.com/, https://entergybabelwebre.winchlawfirm.com/, https://businesslegal.winchlawfirm.com/.
 Preserve URLs and both published articles. Dedicated expropriation phone +15043772620 must remain separate from general +15045001899. Brand green #123629, gold eagle with shovel, Georgia serif and Arial sans serif. No logo animation or fullscreen splash.
