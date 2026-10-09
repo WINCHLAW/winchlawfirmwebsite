@@ -9,6 +9,7 @@ Earlier notes claiming the main site remains on Wix, no Netlify plugin exists, o
 Evidence selected the homepage as the highest-value linking surface: GSC September11–October8 reports6 clicks/60 impressions/10% CTR/average position3.1667 for the HTTPS www homepage; GA4 property555762522 reports59 homepage landing sessions,45 active users and33 engaged sessions. The newly published West Fork Creek / Project Omega page had no homepage link.
 Executed: added a visible Project Omega card in the homepage “Find your path” section linking to /west-fork-creek. Commit bb5b4120d37f8aa78902149741d75b5d0e4f685c triggered production deploy6ac8f063731a5900082d5fcb.
 Verified live October9: deploy ready/published13:47:25Z; homepage card resolves to https://winchlawfirm.com/west-fork-creek; destination H1, canonical https://winchlawfirm.com/west-fork-creek, GTM container, dedicated expropriation phone and consultation links load. This internal-link task is complete.
+A second focused internal-link task completed October9: added a Project Omega card to /legal-resources, the site’s Louisiana property-rights resource hub. Commit e28900b3479baffbfcaaf28d0ed20d189ce2aed6 triggered production deploy6ac8fda9e46b8000087c54a7, ready/published14:44:03Z. Verified live: the resource page exposes the card, canonical https://winchlawfirm.com/legal-resources, and the card resolves to /west-fork-creek.
 
 ## Today's executed repair — consultation capture
 Before: live /book-online had Netlify form markup, but processing was disabled and get_forms returned[].
