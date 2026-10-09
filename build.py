@@ -22,7 +22,8 @@ def clean_blocks(container):
  result=[]
  for x in container.find_all(['h2','h3','p','ul','ol','figure']):
   if any(a.name in ['ul','ol','figure'] for a in x.parents if a!=container):continue
-  if 'Justin Lamar Winch' in x.get_text(' ',strip=True):continue\n  if not x.get_text(strip=True).replace('\u200b','') and x.name!='figure':continue
+  if 'Justin Lamar Winch' in x.get_text(' ',strip=True):continue
+  if not x.get_text(strip=True).replace('\u200b','') and x.name!='figure':continue
   y=BeautifulSoup(str(x),'html.parser')
   for el in y.find_all(True):
    el.attrs={k:v for k,v in el.attrs.items() if k in ['href','src','alt']}
