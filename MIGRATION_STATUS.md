@@ -1,9 +1,14 @@
-# Migration and SEO status — October 8, 2026
+# Migration and SEO status — October 9, 2026
 ## Current verified state
 Main site is published at https://winchlawfirm.com/ on Netlify project majestic-cajeta-b5cfbd (50259f63-1a06-4d44-80b1-36fe24a8e725), with source WINCHLAW/winchlawfirmwebsite main.
 Production deploy 6ac79c58b81b99000808ed1a published October8 at13:36:39Z from commit e30abec732b01da371378ef5fa3c0988bbaa2286, including West Fork Creek / Project Omega page.
 Git delivery demonstrated again: commit72f68e5150f3342490e95df478ac882874993b58 triggered deploy6ac79e5d05635e0007af1d14, ready and published October8 at13:45:13Z.
 Earlier notes claiming the main site remains on Wix, no Netlify plugin exists, or Git connection is unestablished are superseded. Do not rebuild or re-import the site. Publishing does not complete all acceptance gates.
+
+## October 9 executed SEO improvement — Project Omega discovery
+Evidence selected the homepage as the highest-value linking surface: GSC September11–October8 reports6 clicks/60 impressions/10% CTR/average position3.1667 for the HTTPS www homepage; GA4 property555762522 reports59 homepage landing sessions,45 active users and33 engaged sessions. The newly published West Fork Creek / Project Omega page had no homepage link.
+Executed: added a visible Project Omega card in the homepage “Find your path” section linking to /west-fork-creek. Commit bb5b4120d37f8aa78902149741d75b5d0e4f685c triggered production deploy6ac8f063731a5900082d5fcb.
+Verified live October9: deploy ready/published13:47:25Z; homepage card resolves to https://winchlawfirm.com/west-fork-creek; destination H1, canonical https://winchlawfirm.com/west-fork-creek, GTM container, dedicated expropriation phone and consultation links load. This internal-link task is complete.
 
 ## Today's executed repair — consultation capture
 Before: live /book-online had Netlify form markup, but processing was disabled and get_forms returned[].
@@ -15,15 +20,15 @@ Exact remaining blocker: plugin exposes form metadata/count, not submission cont
 Concrete done condition: verified stored inquiry with retrievable dummy PDF, and receipt at justin.winch@winchlawfirm.com. Form detection is fixed; end-to-end delivery remains unfinished.
 
 ## Analytics evidence
-Period September10–October7,2026; comparison August13–September9,2026.
+Period September11–October8,2026; comparison August14–September10,2026.
 GA4 requested property417150352 winchlawfirmgoogleanalytics: completed empty current and prior results, not proof of zero traffic.
-Separately connected GA4 property555762522 Property1:53 sessions,41 active users,25 engaged sessions,47.17% engagement; prior read empty. Host/source/landing report includes8 google/organic sessions at www.winchlawfirmllc.com homepage and2 at www.winchlawfirm.com homepage. Other traffic includes direct, Wix/admin referrals, and Netlify preview hostnames. No consultation/contact-specific event rows; returned key-event counts0. Do not treat all53 sessions as qualified inquiries or report percentage growth from empty prior results.
+Separately connected GA4 property555762522 Property1: homepage landing row59 sessions,45 active users,33 engaged sessions,55.93% engagement; /book-online1 session/0 engaged; /louisiana-landowner-bill-of-rights2 sessions/0 engaged; (not set)6 sessions. Source/medium report includes google/organic11 sessions,10 active users,10 engaged sessions; direct37 sessions,32 active users,10 engaged sessions. Event report returned133 page views,23 clicks,1 document_open and1 file_download; all returned key-event counts0 and no contact/consultation event row. Prior-period reads returned no rows; do not report percentage growth from an empty comparison.
 GSC sc-domain:winchlawfirm.com recent period with provisional fresh data:
-- HTTPS www homepage:6 clicks,56 impressions,10.71% CTR,position3.3214.
-- HTTP Babel homepage:1 click,1 impression,100% CTR,position1.
-- HTTP www homepage:0 clicks,2 impressions,0% CTR,position6.5.
-- HTTPS Entergy homepage:0 clicks,12 impressions,0% CTR,position3.6667.
-Prior period returned no rows. Query report reveals3 clicks for 'justin winch'; other exposed query rows include Abbeville legal searches with no clicks. Omitted/anonymized queries prevent classifying all7 page-level clicks. No identifiable visitors inferred.
+- HTTPS www homepage:6 clicks,60 impressions,10% CTR,average position3.1667.
+- HTTPS Entergy homepage:0 clicks,13 impressions,0% CTR,position3.5385.
+- HTTPS Babel homepage:0 clicks,2 impressions,0% CTR,position8.
+- Historical HTTP Babel homepage:1 click,1 impression,position1; historical HTTP www homepage:0 clicks,2 impressions,position6.5.
+Prior period returned no rows. Query report exposes3 clicks for 'justin winch'; remaining exposed queries are small-volume Abbeville legal terms with no clicks. Omitted/anonymized queries prevent classifying all page-level clicks. No identifiable visitors inferred.
 
 ## Prioritized queue
 1. Main consultation form: repair executed and detection verified today; delivery/upload/spam/notification gate remains unfinished. Carry this gate forward, not repeat enabling detection.
@@ -38,7 +43,7 @@ BREC Baton Rouge Zoo bald-eagle adoption: primary pages https://brzoo.org/suppor
 Audience: Louisiana conservation/community families and potential local referrers; connection is the firm's eagle-and-land identity and actual regional conservation support, not a claim of legal referrals or ranking gains.
 Next small action: retain this unsent question for a later authorized inquiry: 'Before Winch Law Firm adopts the bald eagle, can you confirm the resident bird's name/story/current exhibit status and whether the package photo may appear on a commercial firm website with credit? Is any public wording approval required?'
 No outreach, spending, adoption or marketing publication performed. An outbound zoo link is a reference from our site; an independently earned inbound link is the zoo's separate editorial decision; a paid sponsorship link needs rel=sponsored or appropriate nofollow qualification. No backlink/endorsement/exclusivity promised.
-Fair/show-pig candidate remains parked behind inquiry delivery.
+Fair/show-pig candidate advanced October9: LSU AgCenter confirms the2027 State 4-H/FFA Livestock Show for February13–20,2027 at Lamar Dixon Expo Center in Gonzales. Its official sponsorship page supports the Livestock Youth Development Fund; published2026 major levels began at$2,500, which is outside the current inexpensive-candidate target. A prior Acadia Parish buckle sponsorship was$150, but the published deadline was November3,2025 and is stale—not a current offer. Next bounded action: watch for a2027 parish-level buckle/market-hog award opportunity at or below$250 before any outreach or spending. Audience is Louisiana 4-H/FFA exhibitors, agricultural families and rural referrers; the connection is real youth agricultural support, not a promised SEO link or endorsement.
 
 ## Preserved source/content
 Existing main text and both articles retained in migration/ and generated routes.
