@@ -53,3 +53,28 @@ Existing main text and both articles retained in migration/ and generated routes
 /post/should-i-sign-utility-servitude-agreement-louisiana,
 /book-online, /privacy, /thank-you, /west-fork-creek.
 Static eagle, no splash animation. Newsletter/member notifications not migrated as services. Article illustration full-resolution archival before Wix retirement remains unverified.
+
+
+## October 11, 2026 — automated SEO and activity review (executed)
+### Data sources and window
+- GA4 connector discovery still shows two properties. The named property `winchlawfirmgoogleanalytics` (account `417150352`) returned an empty result for this request; that is an access/property-mapping issue, not evidence of zero traffic.
+- The connected GA4 property `Property1` (account `555762522`) returned data for 2026-09-13 through 2026-10-10. No valid prior-period rows were returned, so no growth percentage is asserted.
+- Search Console property `sc-domain:winchlawfirm.com` returned data for the same 28-day window.
+
+### Activity evidence
+- GA4 Property1: 88 sessions, 58 active users on the recorded landing-page rows; the homepage accounted for 78 sessions, 58 active users, and 46 engaged sessions (58.97% engagement).
+- Source/medium: direct 50 sessions (36% engagement), Google organic 16 sessions (87.5% engagement), and one `direct_mail / qr` session with engagement.
+- Recorded key events: `generate_lead` 5 (5 marked conversions), `document_open` 2 (1 marked conversion), `form_start` 5, `form_submit` 1. These events need destination/receipt verification before being treated as qualified inquiries.
+- Search Console: site aggregate was 9 clicks, 93 impressions, 9.68% CTR, average position 4.12. The Entergy page had 17 impressions and 0 clicks at average position 3.88; the Louisiana utility-servitude article had 1 click from 5 impressions at average position 8.4.
+
+### Live technical review
+- `https://entergy.winchlawfirm.com/` returned HTTP 200. Canonical and `og:url` are correct, but `og:image` and `twitter:image` still use the relative value `assets/og-cover.png`.
+- `https://entergybabelwebre.winchlawfirm.com/` returned HTTP 200 and a correct canonical, but no Open Graph or Twitter image/title/description tags were present in the live HTML.
+- `https://businesslegal.winchlawfirm.com/` returned HTTP 200 and a correct canonical, but the live `og:image` is the literal placeholder `[OG_IMAGE_URL]`; this is now queued as a metadata defect.
+- Main site returned HTTP 200 with canonical, `og:url`, and absolute social image URLs. Specialty robots.txt and sitemap.xml endpoints returned HTTP 200.
+
+### Action state
+- COMPLETE/VERIFIED: live measurement pass and evidence recorded above.
+- PREPARED (not deployed): corrected Entergy absolute image URLs and Babel Open Graph/Twitter tags exist in local review files.
+- BLOCKED: publishing those specialty metadata fixes. The connected Netlify tools expose project/deploy reads but no deploy/upload write operation, and the specialty sites are not represented by source files in `WINCHLAW/winchlawfirmwebsite`. No claim of deployment is made.
+- NEXT QUEUE: publish the specialty metadata patch through a connected Git-backed source or the existing Netlify deploy workflow; then fetch live HTML again and verify canonical, `og:url`, and absolute social images. After that, verify the consultation/document form's actual receipt and notification path.
