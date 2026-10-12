@@ -1,4 +1,12 @@
-const button=document.querySelector('.menu'),nav=document.querySelector('nav');button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open)});
+const button=document.querySelector('.menu'),nav=document.querySelector('#navigation');
+const projectNav=document.querySelector('.project-nav'),projectButton=document.querySelector('.project-toggle'),projectLinks=document.querySelector('#project-links');
+function setProjects(open,restoreFocus=false){if(!projectButton||!projectLinks)return;projectButton.setAttribute('aria-expanded',String(open));projectLinks.hidden=!open;if(restoreFocus)projectButton.focus()}
+button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);if(!open)setProjects(false)});
+projectButton?.addEventListener('click',()=>setProjects(projectButton.getAttribute('aria-expanded')!=='true'));
+projectButton?.addEventListener('keydown',event=>{if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();setProjects(true);const links=projectLinks.querySelectorAll('a');(event.key==='ArrowUp'?links[links.length-1]:links[0])?.focus()}});
+document.addEventListener('click',event=>{if(projectNav&&!projectNav.contains(event.target))setProjects(false);else if(event.target.closest('#project-links a'))setProjects(false)});
+document.addEventListener('focusin',event=>{if(projectNav&&!projectNav.contains(event.target))setProjects(false)});
+document.addEventListener('keydown',event=>{if(event.key!=='Escape')return;if(projectButton?.getAttribute('aria-expanded')==='true'){event.preventDefault();setProjects(false,true)}else if(button?.getAttribute('aria-expanded')==='true'){event.preventDefault();button.setAttribute('aria-expanded','false');nav.classList.remove('open');button.focus()}});
 function record(name,params={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:name,...params})}
 document.addEventListener('click',event=>{const a=event.target.closest('a');if(!a)return;const href=a.getAttribute('href');if(href.startsWith('tel:'))record('phone_click',{contact_line:href.includes('5001899')?'expropriation':'general'});else if(href.startsWith('mailto:'))record('email_click');else if(href.startsWith('https://')&&!href.includes('www.winchlawfirm.com'))record('specialty_site_click',{destination_host:new URL(href).hostname})});
 const form=document.querySelector('form');let started=false;form?.addEventListener('input',()=>{if(!started){started=true;record('consultation_start')}});
