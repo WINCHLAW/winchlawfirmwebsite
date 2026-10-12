@@ -1,17 +1,17 @@
-# Migration and SEO status — October 9, 2026
+# Migration and SEO status - October 9, 2026
 ## Current verified state
 Main site is published at https://winchlawfirm.com/ on Netlify project majestic-cajeta-b5cfbd (50259f63-1a06-4d44-80b1-36fe24a8e725), with source WINCHLAW/winchlawfirmwebsite main.
 Production deploy 6ac79c58b81b99000808ed1a published October8 at13:36:39Z from commit e30abec732b01da371378ef5fa3c0988bbaa2286, including West Fork Creek / Project Omega page.
 Git delivery demonstrated again: commit72f68e5150f3342490e95df478ac882874993b58 triggered deploy6ac79e5d05635e0007af1d14, ready and published October8 at13:45:13Z.
 Earlier notes claiming the main site remains on Wix, no Netlify plugin exists, or Git connection is unestablished are superseded. Do not rebuild or re-import the site. Publishing does not complete all acceptance gates.
 
-## October 9 executed SEO improvement — Project Omega discovery
-Evidence selected the homepage as the highest-value linking surface: GSC September11–October8 reports6 clicks/60 impressions/10% CTR/average position3.1667 for the HTTPS www homepage; GA4 property555762522 reports59 homepage landing sessions,45 active users and33 engaged sessions. The newly published West Fork Creek / Project Omega page had no homepage link.
-Executed: added a visible Project Omega card in the homepage “Find your path” section linking to /west-fork-creek. Commit bb5b4120d37f8aa78902149741d75b5d0e4f685c triggered production deploy6ac8f063731a5900082d5fcb.
+## October 9 executed SEO improvement - Project Omega discovery
+Evidence selected the homepage as the highest-value linking surface: GSC September11-October8 reports6 clicks/60 impressions/10% CTR/average position3.1667 for the HTTPS www homepage; GA4 property555762522 reports59 homepage landing sessions,45 active users and33 engaged sessions. The newly published West Fork Creek / Project Omega page had no homepage link.
+Executed: added a visible Project Omega card in the homepage "Find your path" section linking to /west-fork-creek. Commit bb5b4120d37f8aa78902149741d75b5d0e4f685c triggered production deploy6ac8f063731a5900082d5fcb.
 Verified live October9: deploy ready/published13:47:25Z; homepage card resolves to https://winchlawfirm.com/west-fork-creek; destination H1, canonical https://winchlawfirm.com/west-fork-creek, GTM container, dedicated expropriation phone and consultation links load. This internal-link task is complete.
-A second focused internal-link task completed October9: added a Project Omega card to /legal-resources, the site’s Louisiana property-rights resource hub. Commit e28900b3479baffbfcaaf28d0ed20d189ce2aed6 triggered production deploy6ac8fda9e46b8000087c54a7, ready/published14:44:03Z. Verified live: the resource page exposes the card, canonical https://winchlawfirm.com/legal-resources, and the card resolves to /west-fork-creek.
+A second focused internal-link task completed October9: added a Project Omega card to /legal-resources, the site's Louisiana property-rights resource hub. Commit e28900b3479baffbfcaaf28d0ed20d189ce2aed6 triggered production deploy6ac8fda9e46b8000087c54a7, ready/published14:44:03Z. Verified live: the resource page exposes the card, canonical https://winchlawfirm.com/legal-resources, and the card resolves to /west-fork-creek.
 
-## Today's executed repair — consultation capture
+## Today's executed repair - consultation capture
 Before: live /book-online had Netlify form markup, but processing was disabled and get_forms returned[].
 Executed: enabled Netlify Forms via authorized plugin; committed status change to trigger the connected build.
 Verified: processing enabled; consultation form6ac79e68ad0ab40008f63ca1 registered at13:45:12Z, fields name/email/phone/topic/message/document/acknowledgment plus honeypot. Live HTML confirms Netlify processed the form. Dedicated expropriation phone504-377-2620 and general504-500-1899 remain distinct.
@@ -21,7 +21,7 @@ Exact remaining blocker: plugin exposes form metadata/count, not submission cont
 Concrete done condition: verified stored inquiry with retrievable dummy PDF, and receipt at the firm's configured inbox. Form detection is fixed; end-to-end delivery remains unfinished.
 
 ## Analytics evidence
-Period September11–October8,2026; comparison August14–September10,2026.
+Period September11-October8,2026; comparison August14-September10,2026.
 GA4 requested property417150352 winchlawfirmgoogleanalytics: completed empty current and prior results, not proof of zero traffic.
 Separately connected GA4 property555762522 Property1: homepage landing row59 sessions,45 active users,33 engaged sessions,55.93% engagement; /book-online1 session/0 engaged; /louisiana-landowner-bill-of-rights2 sessions/0 engaged; (not set)6 sessions. Source/medium report includes google/organic11 sessions,10 active users,10 engaged sessions; direct37 sessions,32 active users,10 engaged sessions. Event report returned133 page views,23 clicks,1 document_open and1 file_download; all returned key-event counts0 and no contact/consultation event row. Prior-period reads returned no rows; do not report percentage growth from an empty comparison.
 GSC sc-domain:winchlawfirm.com recent period with provisional fresh data:
@@ -39,12 +39,12 @@ Prior period returned no rows. Query report exposes3 clicks for 'the firm'; rema
 Navigation: the firm reported complete October2; specialty links verified October7. Do not repeat installation.
 Main migration launch gates still pending: desktop/mobile rendering, all preserved routes/assets, end-to-end inquiry and upload receipt, notifications, GA receipt and key events, www/apex routing and preserved DNS/email records. Git deployment now verified.
 
-## Creative candidate queue — research only
-BREC Baton Rouge Zoo bald-eagle adoption: primary pages https://brzoo.org/support/adopt-an-animal and https://brzoo.org/animals/bald-eagle checked October8. Bald eagle listed; Go Green25 dollars/year, renewable, emailed certificate/keeper report/high-resolution photo. New planning detail: zoo says processing takes3–4 weeks. Species page does not identify resident bird's name, sex, individual story or current exhibit status. Commercial photo permission and public firm-adoption wording remain unverified.
+## Creative candidate queue - research only
+BREC Baton Rouge Zoo bald-eagle adoption: primary pages https://brzoo.org/support/adopt-an-animal and https://brzoo.org/animals/bald-eagle checked October8. Bald eagle listed; Go Green25 dollars/year, renewable, emailed certificate/keeper report/high-resolution photo. New planning detail: zoo says processing takes3-4 weeks. Species page does not identify resident bird's name, sex, individual story or current exhibit status. Commercial photo permission and public firm-adoption wording remain unverified.
 Audience: Louisiana conservation/community families and potential local referrers; connection is the firm's eagle-and-land identity and actual regional conservation support, not a claim of legal referrals or ranking gains.
 Next small action: retain this unsent question for a later authorized inquiry: 'Before Winch Law Firm adopts the bald eagle, can you confirm the resident bird's name/story/current exhibit status and whether the package photo may appear on a commercial firm website with credit? Is any public wording approval required?'
 No outreach, spending, adoption or marketing publication performed. An outbound zoo link is a reference from our site; an independently earned inbound link is the zoo's separate editorial decision; a paid sponsorship link needs rel=sponsored or appropriate nofollow qualification. No backlink/endorsement/exclusivity promised.
-Fair/show-pig candidate advanced October9: LSU AgCenter confirms the2027 State 4-H/FFA Livestock Show for February13–20,2027 at Lamar Dixon Expo Center in Gonzales. Its official sponsorship page supports the Livestock Youth Development Fund; published2026 major levels began at$2,500, which is outside the current inexpensive-candidate target. A prior Acadia Parish buckle sponsorship was$150, but the published deadline was November3,2025 and is stale—not a current offer. Next bounded action: watch for a2027 parish-level buckle/market-hog award opportunity at or below$250 before any outreach or spending. Audience is Louisiana 4-H/FFA exhibitors, agricultural families and rural referrers; the connection is real youth agricultural support, not a promised SEO link or endorsement.
+Fair/show-pig candidate advanced October9: LSU AgCenter confirms the2027 State 4-H/FFA Livestock Show for February13-20,2027 at Lamar Dixon Expo Center in Gonzales. Its official sponsorship page supports the Livestock Youth Development Fund; published2026 major levels began at$2,500, which is outside the current inexpensive-candidate target. A prior Acadia Parish buckle sponsorship was$150, but the published deadline was November3,2025 and is stale-not a current offer. Next bounded action: watch for a2027 parish-level buckle/market-hog award opportunity at or below$250 before any outreach or spending. Audience is Louisiana 4-H/FFA exhibitors, agricultural families and rural referrers; the connection is real youth agricultural support, not a promised SEO link or endorsement.
 
 ## Preserved source/content
 Existing main text and both articles retained in migration/ and generated routes.
@@ -55,7 +55,7 @@ Existing main text and both articles retained in migration/ and generated routes
 Static eagle, no splash animation. Newsletter/member notifications not migrated as services. Article illustration full-resolution archival before Wix retirement remains unverified.
 
 
-## October 11, 2026 — automated SEO and activity review (executed)
+## October 11, 2026 - automated SEO and activity review (executed)
 ### Data sources and window
 - GA4 connector discovery still shows two properties. The named property `winchlawfirmgoogleanalytics` (account `417150352`) returned an empty result for this request; that is an access/property-mapping issue, not evidence of zero traffic.
 - The connected GA4 property `Property1` (account `555762522`) returned data for 2026-09-13 through 2026-10-10. No valid prior-period rows were returned, so no growth percentage is asserted.
@@ -78,3 +78,10 @@ Static eagle, no splash animation. Newsletter/member notifications not migrated 
 - PREPARED (not deployed): corrected Entergy absolute image URLs and Babel Open Graph/Twitter tags exist in local review files.
 - BLOCKED: publishing those specialty metadata fixes. The connected Netlify tools expose project/deploy reads but no deploy/upload write operation, and the specialty sites are not represented by source files in `WINCHLAW/winchlawfirmwebsite`. No claim of deployment is made.
 - NEXT QUEUE: publish the specialty metadata patch through a connected Git-backed source or the existing Netlify deploy workflow; then fetch live HTML again and verify canonical, `og:url`, and absolute social images. After that, verify the consultation/document form's actual receipt and notification path.
+
+## October 12, 2026 - authorized phone assignments and placeholder audit
+The user explicitly reassigned general/main and Business Legal inquiries to 504-377-2620, and Entergy, Babel-Webre and Project Omega/expropriation inquiries to 504-500-1899. This supersedes the prior reversed phone assignments above. Updated the main-site source footer, homepage Entergy contact, consultation contact text and Project Omega contact, with matching tel links. No legal substance, forms, routing, canonical metadata or indexing settings changed.
+Validation before publication: Python build (UTF-8 mode on Windows), all 12 generated HTML documents passed the existing site checks, and JavaScript syntax check passed. Deployment/live verification must be checked against the resulting commit; this entry alone is not proof of publication.
+Live audit: 33 public URLs checked, 30 successful. Main repository and inspected main/Babel pages contain no LSBA filing placeholder. Entergy home, its netlify.app alias and current immutable deploy permalink still expose the placeholder. Prepared a narrow removal retaining attorney-advertising and responsible-lawyer disclosures. Business Legal also has unfinished image, scope note and article placeholders; cleanup and phone patches are prepared separately, not deployed.
+Specialty publication is blocked in this execution environment: connector tools lack deploy/upload operations, no local Netlify CLI login/source bundle was found, and supported browser initialization failed. Specialty sites are separate CLI deployments with existing functions and must not be replaced with HTML-only bundles. Main Git publication does not fix those sites or their historical deployments.
+Technical checks: /entergy-property-rights-review resolves to the Entergy subdomain with HTTP 200 and no loop. All four sites serve HTTP 200 robots.txt and XML sitemaps. Entergy og:image and twitter:image are relative assets/og-cover.png; the image itself returns 200. Recommended later change: use https://entergy.winchlawfirm.com/assets/og-cover.png for both. No routing/canonical/robots changes or IndexNow submission performed.
