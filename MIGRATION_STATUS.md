@@ -92,3 +92,27 @@ Added the explicitly requested “Entergy’s Babel-Webre Transmission Expropria
 
 ## October 12, 2026 — accessible project dropdown
 Replaced the three separate Entergy/project header links with an actual “Entergy Projects” disclosure button and dropdown containing all three destinations; all other navigation links remain. The mobile Menu contains the same dropdown. Native button supports Enter/Space and click/touch; ArrowDown/ArrowUp open and focus the first/last project link; Escape closes and restores focus; outside click and focus departure close the dropdown; closing the mobile menu closes the project list. Desktop list is positioned below its toggle; mobile list expands inline. Build and 12-page checks passed, JS syntax passed, and interaction simulation covered each close/open/focus path. Production and browser verification remain separate checks after this commit.
+
+
+## October 12, 2026 — daily SEO + activity review
+### Current measurement
+- GA4 account `winchlawfirmgoogleanalytics` (`417150352`) returned an empty result for landing pages, sources, and events for 2026-09-14 through 2026-10-11. This remains an empty connector result, not zero traffic.
+- The connected GA4 property `Property1` (`555762522`) returned 92 sessions and 60 active users in the same window. Homepage: 81 sessions, 60 active users, 47 engaged sessions (58.02% engagement). Google organic: 16 sessions, 14 active users, 14 engaged sessions (87.5% engagement). The recorded event totals included 5 `generate_lead` events marked as conversions, 2 `document_open` events with 1 marked conversion, 5 `form_start`, and 1 `form_submit`.
+- Search Console returned 9 clicks, 100 impressions, and the current page rows show 8 homepage clicks from 72 impressions (11.11% CTR, average position 5.03), 17 Entergy-page impressions with 0 clicks (average position 3.88), and 1 click from 6 impressions on the utility-servitude article (average position 8.67).
+- Neither GA4 nor Search Console returned usable preceding-period rows for 2026-08-17 through 2026-09-13, so no period-over-period percentage is asserted.
+
+### Live inspection
+- Main site and all three specialty homepages returned HTTP 200.
+- Main site canonical, `og:url`, and social images are absolute.
+- Entergy canonical and `og:url` are correct, but `og:image` and `twitter:image` remain relative (`assets/og-cover.png`).
+- Babel-Webre has a canonical but no live Open Graph/Twitter tags.
+- Business Legal has a canonical and form, but no live social-image tag was found.
+- Entergy and Babel-Webre forms are present in the live HTML; receipt/notification delivery was not tested in this run. Robots and sitemap endpoints returned HTTP 200.
+
+### Focused action
+- PREPARED: added valid Article JSON-LD to `public/post/should-i-sign-utility-servitude-agreement-louisiana/index.html` in GitHub commit `03b62003660cdbce073dfe3e577a7f117936f666`. This targets the only currently measured substantive article with a click and a page-2-ish average position.
+- Verification: GitHub source contains the schema. The currently published Netlify deploy is still commit `785b6594e7c0a34d4226ff68997b63215ba3b00c`; the live article does not yet contain the new JSON-LD. Therefore this is PREPARED, not DEPLOYED.
+
+### Queue
+- BLOCKED: main-site GitHub commit `03b6200...` has not reached the published Netlify deploy through the currently observed deployment connection.
+- NEXT: trigger/repair the Git-to-Netlify production deployment, then fetch the article HTML and confirm the JSON-LD is live. After that, publish the specialty metadata patch and verify form receipt/notification.
