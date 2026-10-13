@@ -116,3 +116,25 @@ Replaced the three separate Entergy/project header links with an actual “Enter
 ### Queue
 - BLOCKED: main-site GitHub commit `03b6200...` has not reached the published Netlify deploy through the currently observed deployment connection.
 - NEXT: trigger/repair the Git-to-Netlify production deployment, then fetch the article HTML and confirm the JSON-LD is live. After that, publish the specialty metadata patch and verify form receipt/notification.
+
+
+## October 13, 2026 — measurement-chain reconciliation
+### Where the analytics chain currently stops
+- The live site loads Google Tag Manager container `GTM-PB4XQM3P`.
+- The public GTM container resolves to measurement ID `G-TFD9CQT062`.
+- GA4 data for that measurement ID is being returned under account/property `555762522`, display name `Property1`, stream `15838544994`.
+- That stream recorded sessions across `winchlawfirm.com`, `www.winchlawfirm.com`, `entergy.winchlawfirm.com`, `entergybabelwebre.winchlawfirm.com`, and `businesslegal.winchlawfirm.com`.
+- The named Windsor connection `winchlawfirmgoogleanalytics` (`417150352`) returned an empty result again for the same requested window. The stop is therefore after the website tag and GA4 collection, at the property/account mapping or permissions for the named Windsor connection—not at the website tag.
+
+### Current activity, September 15–October 12
+- Verified live GA4 fallback property: 90 homepage sessions, 67 active users, 53 engaged sessions (58.89% engagement); 16 Google-organic sessions with 87.5% engagement.
+- Search Console: homepage 8 clicks / 72 impressions / 11.11% CTR / average position 5.03; Entergy page 17 impressions / 0 clicks / average position 3.88; utility-servitude article 1 click / 6 impressions / average position 8.67.
+- No usable preceding-period rows were returned for GA4 or Search Console, so no period-over-period percentage is asserted.
+
+### Action
+- COMPLETE/VERIFIED: updated the daily automation with the verified measurement mapping and a required fallback to account `555762522`, while continuing to report `417150352` as empty. This prevents future runs from treating the wrong property as the live source.
+- PREPARED: Article JSON-LD patch remains in GitHub but is not live. The current Netlify production deploy is a manual deploy titled `Correct U-37882 docket card destination only` and does not contain the patch.
+- BLOCKED: direct deployment of the Article schema and specialty metadata through the current Netlify tool surface.
+
+### Next queue
+Repair the GitHub-to-Netlify production trigger or use an authorized manual deploy path, then verify the Article JSON-LD live. Separately reconcile/rename the GA4 property in Google so the live stream is no longer ambiguously labeled `Property1`.
