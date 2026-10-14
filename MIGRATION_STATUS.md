@@ -138,3 +138,37 @@ Replaced the three separate Entergy/project header links with an actual “Enter
 
 ### Next queue
 Repair the GitHub-to-Netlify production trigger or use an authorized manual deploy path, then verify the Article JSON-LD live. Separately reconcile/rename the GA4 property in Google so the live stream is no longer ambiguously labeled `Property1`.
+
+
+## October 14, 2026 — persistent Article schema repair (COMPLETE/VERIFIED)
+### Diagnosis superseding yesterday's deployment-blocker assumption
+Netlify production deploy 6ace304829f2ee2aff7f5b3a was ready and published October 13 at 13:21:23Z from GitHub commit 88ab4a527f0928abf93169efa0ab6448938ee961. Thus Git-to-Netlify publication is functioning for the main site. The prior patch edited generated public HTML, but build.py regenerated that file without Article JSON-LD. This was a generator omission, not demonstrated missing deployment permission or a broken Git trigger. Do not repeat the stale main-site deployment blocker.
+
+### Executed fix and evidence
+- Commit 6524ddbba3a127a0e24ab35b65f118dc534e4e87 updates build.py to generate Article JSON-LD on the utility-servitude guide and adds a regression test in tests/check_site.py.
+- Schema is generated from the same origin/path/title/description as the page: canonical, mainEntityOfPage, Article @id, and absolute image cannot silently diverge. No author biography, publication date, review rating, or legal outcome was invented.
+- Two local rebuilds passed: all 12 HTML documents, HTTPS/internal routes/assets, form markup, existing phone lines, retained articles, crawl files, JavaScript syntax, and exactly one matching Article schema. These are build/structure tests, not end-to-end form delivery or browser rendering tests.
+- Production deploy 6acf837a0f9182bdceddee1f: state ready, commit 6524ddbba3a127a0e24ab35b65f118dc534e4e87, published 2026-10-14T13:28:37.374Z. Live HTTPS article returned 200 and parsed Article JSON-LD matching its canonical, visible H1 and og:image.
+- No phone assignments, legal article body, navigation, forms, or specialty deployments changed. October 12 user-authorized numbers in AGENTS.md supersede reversed historical records: general/main/Business Legal 504-377-2620; Entergy/Babel/Omega 504-500-1899.
+- Benefit: this metadata now survives future builds. No ranking/rich-result or inquiry gain is claimed.
+
+### Current measurement (September 16–October 13, inclusive)
+- Requested property 417150352 returned [] for current landing/source/event reports and prior totals. Cause for that property's empty report remains unproven; its emptiness does not establish zero traffic or broken collection on the live property.
+- Verified live property 555762522: aggregate 118 sessions, 82 active users, 63 engaged sessions. This is unfiltered and includes development/testing hosts; do not describe all as prospective clients.
+- Google organic: 17 sessions, 15 engaged. Direct mail / qr: 2 sessions, 2 engaged. Events: generate_lead 6 (6 key events), document_open 4 (2 key events), form_start 6, form_submit 1. These do not prove six real inquiries, PDF receipt, or qualified matters.
+- Host + landing report: main apex /west-fork-creek 9 sessions/5 active users/7 engaged; Entergy root 14/10/11; Babel root 10/5/8; Business Legal root 6/5/5. Sessions/users across host/page breakdowns are not necessarily additive.
+- Search Console page rows: 10 clicks and 110 impressions summed across returned pages; homepage 8/74 (10.81% CTR, position 4.99), Entergy 0/18 (position 3.72), utility-servitude guide 1/6 (position 8.67), historic HTTP Babel 1/1. Query rows expose 3 branded clicks for justin winch, but not all queries; no intent is inferred for omitted queries.
+- Preceding August 19–September 15 reports returned [] for live-property GA4 totals and GSC pages; no percentage growth is calculated.
+
+### Public audit and remaining queue
+- All four root pages and their robots.txt/sitemap.xml endpoints returned 200. Sitemaps were XML and robots files point to their own site's sitemap.
+- Main article/contact/Omega routes returned 200 with matching canonical/og:url, absolute social-image addresses, GTM and viewport markup.
+- Viewport markup is not a substitute for visual mobile QA; no browser-rendered mobile test was performed.
+- PREPARED/BLOCKED: specialty social tags remain unfinished. Entergy social images remain relative; Babel lacks og:url/social-image tags; Business Legal lacks a social-image tag in today's HTML. Current Netlify tool surface lacks a direct deploy/create/upload operation; this is an exposed-tool limitation, not proof that the account's OAuth permissions are read-only. Preserve existing specialty functions and do not upload HTML-only replacements.
+- NEXT: verify actual consultation/PDF receipt and notification through the intended intake destination; then complete specialty social metadata when a supported publication path is available.
+
+### Five-minute creative candidate (internal draft; not published or mailed)
+A small document-checklist insert for the existing landowner letter: "Received a utility notice? Keep the letter, proposed agreement, map and any appraisal together." Audience: recipients already reviewing a utility acquisition; purpose: make the next step practical, not alarming. Proposed campaign link: https://entergy.winchlawfirm.com/?utm_source=direct_mail&utm_medium=qr&utm_campaign=notice_review_2026_10#reviewForm . This is a draft campaign convention, not a claim that letters have been mailed or the QR was scanned. Incremental printing cost is unknown; no spending/contact/publication occurred. Next small action: generate and camera-test this campaign's QR before any print batch, logging synthetic tests separately from recipient activity.
+
+### Sprint record
+Completed within the 30-minute cap: current/prior measurement reads, public endpoint audit, generator diagnosis, narrow source/test patch, two builds, Git commit, production-deploy and live-schema verification, and the unsent checklist/QR candidate. No fabricated per-minute work durations are asserted.
