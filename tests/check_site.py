@@ -1,6 +1,7 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 from urllib.parse import urlsplit
+import json
 root=Path(__file__).resolve().parents[1]/'public'; count=0
 for f in root.rglob('*.html'):
  s=BeautifulSoup(f.read_text(),'html.parser');count+=1
@@ -24,4 +25,15 @@ assert (root/'robots.txt').is_file() and (root/'sitemap.xml').is_file()
 assert 'thank-you' not in (root/'sitemap.xml').read_text()
 for slug in ['received-utility-right-of-way-offer-letter-louisiana','should-i-sign-utility-servitude-agreement-louisiana']:
  s=BeautifulSoup((root/'post'/slug/'index.html').read_text(),'html.parser');assert len(s.find('main').get_text())>6000
+ if slug=='should-i-sign-utility-servitude-agreement-louisiana':
+  records=[json.loads(tag.string) for tag in s.find_all('script',type='application/ld+json')]
+  articles=[record for record in records if record.get('@type')=='Article']
+  assert len(articles)==1,'Utility-servitude guide must retain exactly one Article schema after rebuild'
+  schema=articles[0];canonical=s.find('link',rel='canonical')['href']
+  assert schema['@context']=='https://schema.org'
+  assert schema['@id']==canonical+'#article'
+  assert schema['mainEntityOfPage']['@id']==canonical
+  assert schema['headline']==s.find('h1').get_text(strip=True)
+  assert schema['image']==s.find('meta',property='og:image')['content']
+  assert schema['author']['name']=='Winch Law Firm, LLC'
 print(f'PASS: {count} HTML documents; internal routes/assets, HTTPS links, metadata, both phone lines, form structure, retained articles, crawl files.')
