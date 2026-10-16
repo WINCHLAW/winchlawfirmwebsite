@@ -175,3 +175,5 @@ Completed within the 30-minute cap: current/prior measurement reads, public endp
 
 ## October 16, 2026 — public-use opinion article
 User authorized publication of the Nguyen opinion blog. Prepared a new article at /post/west-fork-creek-public-use-supreme-court using the existing shared design and Article schema; added it to the existing Articles and Resources listings and sitemap. Preserved both earlier articles and existing forms, navigation, analytics and phone assignments. Links include the official March 6, 2026 Supreme Court opinion, the utility statute, and the existing West Fork Creek resource. Distinguishes the port holding from utility-specific analysis. Publication and live verification are pending this commit.
+
+VERIFIED October 16, 2026: commit 69e2ae7078056f1173bdbbb352cb5f6df94b8ef8 reached ready production deploy 6ad2051d7ba36c2663516cd4. Opened /blog/ and clicked the new article; browser verified rendered article at https://winchlawfirm.com/post/west-fork-creek-public-use-supreme-court/. Live HTTP 200, Article schema and sitemap entry confirmed. Existing articles retained. Forms unchanged; outstanding delivery gates not retested.
