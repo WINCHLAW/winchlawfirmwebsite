@@ -172,3 +172,6 @@ A small document-checklist insert for the existing landowner letter: "Received a
 
 ### Sprint record
 Completed within the 30-minute cap: current/prior measurement reads, public endpoint audit, generator diagnosis, narrow source/test patch, two builds, Git commit, production-deploy and live-schema verification, and the unsent checklist/QR candidate. No fabricated per-minute work durations are asserted.
+
+## October 16, 2026 — public-use opinion article
+User authorized publication of the Nguyen opinion blog. Prepared a new article at /post/west-fork-creek-public-use-supreme-court using the existing shared design and Article schema; added it to the existing Articles and Resources listings and sitemap. Preserved both earlier articles and existing forms, navigation, analytics and phone assignments. Links include the official March 6, 2026 Supreme Court opinion, the utility statute, and the existing West Fork Creek resource. Distinguishes the port holding from utility-specific analysis. Publication and live verification are pending this commit.

@@ -40,6 +40,10 @@ posts=[('received-utility-right-of-way-offer-letter-louisiana','Received a Utili
 for slug,title in posts:
  s=BeautifulSoup((ROOT/'migration'/f'{slug}.html').read_text(),'html.parser');a=s.find('article');content=a.find(attrs={'data-hook':'post-content'}) or a
  page('/post/'+slug,title+' | Winch Law Firm','Practical document-review information for Louisiana landowners facing utility acquisitions.','<article class="wrap prose"><h1>'+title+'</h1>'+clean_blocks(content)+'</article>',article=(slug=='should-i-sign-utility-servitude-agreement-louisiana'))
+new_slug='west-fork-creek-public-use-supreme-court'
+new_title='Before “How Much?” Comes “Can They Take It?”'
+page('/post/'+new_slug,new_title+' | Winch Law Firm','A Louisiana Supreme Court ruling shows why West Fork Creek landowners should examine public use, alongside the price offered for their property.',(ROOT/'migration'/f'{new_slug}.html').read_text(),article=True)
+posts.insert(0,(new_slug,new_title))
 postlinks=''.join(f'<a class="card" href="/post/{slug}"><h3>{title}</h3><p>Read the guide →</p></a>' for slug,title in posts)
 page('/blog','Landowner Articles | Winch Law Firm','Published articles about Louisiana utility offers and servitude agreements.','<section class="wrap"><h1>Landowner articles</h1><div class="cards">'+postlinks+'</div></section>')
 page('/legal-resources','Louisiana Property Rights Resources | Winch Law Firm','Landowner rights, utility offer review, and servitude agreement resources.','<section class="wrap"><p class="eyebrow">Resources</p><h1>Make sense of the next step.</h1><div class="cards"><a class="card" href="/louisiana-landowner-bill-of-rights"><h3>Louisiana Landowner Bill of Rights</h3><p>Read the firm’s published resource.</p></a><a class="card" href="/west-fork-creek"><h3>West Fork Creek–Boeuf / Project Omega</h3><p>Review the public record and property-rights questions for the proposed corridor.</p></a>'+postlinks+'</div></section>')
