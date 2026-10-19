@@ -1,6 +1,7 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 import html,json,os,re,shutil
+from urllib.parse import urlsplit, urlunsplit
 ROOT=Path(__file__).parent; OUT=ROOT/'public'; OUT.mkdir(exist_ok=True); (OUT/'assets').mkdir(exist_ok=True)
 origin='https://winchlawfirm.com'; ga=os.environ.get('GA_MEASUREMENT_ID','')
 if ga and not re.fullmatch(r'G-[A-Z0-9]+',ga):raise ValueError('Invalid GA_MEASUREMENT_ID')
@@ -9,8 +10,21 @@ projects='<div class="project-nav"><button class="project-toggle" type="button" 
 header='<a class="skip" href="#main">Skip to content</a><header><div class="bar"><a class="brand" href="/" aria-label="Winch Law Firm home"><img src="/assets/eagle.webp" width="92" height="76" alt=""><span>WINCH<small>LAW FIRM, LLC</small></span></a><button class="menu" aria-expanded="false" aria-controls="navigation">Menu</button><nav id="navigation" aria-label="Main navigation">'+''.join((projects if i==2 else '')+f'<a href="{u}">{t}</a>' for i,(t,u) in enumerate(nav))+'</nav></div></header>'
 footer='<footer><div class="wrap"><h2>People. Property. Justice.</h2><p>Winch Law Firm, LLC</p><p>404 Stafford Place · New Orleans, LA 70124</p><p>General inquiries: <a href="tel:+15043772620">504-377-2620</a><br>Entergy / expropriation dedicated line: <a href="tel:+15045001899">504-500-1899</a></p><p><a href="/blog">Articles</a> · <a href="/privacy">Privacy</a></p><p class="fine">General information, not legal advice. Contacting the firm does not establish an attorney-client relationship. © 2026 Winch Law Firm, LLC.</p></div></footer>'
 pages=[]
+
+def page_url(path):
+ return origin + '/' + path.strip('/') + ('/' if path.strip('/') else '')
+
+def normalize_page_links(doc):
+ def replace(match):
+  value=match.group(2); parts=urlsplit(value)
+  if parts.netloc and parts.netloc not in ['winchlawfirm.com','www.winchlawfirm.com']:return match.group(0)
+  if parts.scheme and parts.scheme not in ['http','https']:return match.group(0)
+  if not parts.path.startswith('/') or parts.path.endswith('/') or '.' in parts.path.rsplit('/',1)[-1]:return match.group(0)
+  value=urlunsplit((('https' if parts.netloc else parts.scheme),('winchlawfirm.com' if parts.netloc else ''),parts.path+'/',parts.query,parts.fragment))
+  return match.group(1)+value+match.group(3)
+ return re.sub(r'(href=")([^"]+)(")',replace,doc)
 def page(path,title,desc,body,noindex=False,article=False):
- url=origin+('' if path=='/' else path); analytics=''
+ url=page_url(path); analytics=''
  analytics="<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PB4XQM3P');</script>"
  meta=f'<link rel="canonical" href="{url}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:image" content="{origin}/assets/social.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(title)}"><meta name="twitter:description" content="{html.escape(desc)}"><meta name="twitter:image" content="{origin}/assets/social.jpg">'
  if noindex:meta+='<meta name="robots" content="noindex,follow">'
@@ -18,6 +32,7 @@ def page(path,title,desc,body,noindex=False,article=False):
   data={'@context':'https://schema.org','@type':'Article','@id':url+'#article','mainEntityOfPage':{'@type':'WebPage','@id':url},'headline':title.removesuffix(' | Winch Law Firm'),'description':desc,'image':origin+'/assets/social.jpg','author':{'@type':'Organization','name':'Winch Law Firm, LLC','url':origin+'/'},'publisher':{'@type':'Organization','name':'Winch Law Firm, LLC','url':origin+'/'}}
   meta+='<script type="application/ld+json">'+json.dumps(data,ensure_ascii=True).replace('<','\\u003c')+'</script>'
  doc=f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}">{meta}<link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script>{analytics}</head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PB4XQM3P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{header}<main id="main">{body}</main>{footer}</body></html>'
+ doc=normalize_page_links(doc)
  dest=OUT/'index.html' if path=='/' else OUT/path.strip('/')/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(doc)
  if not noindex:pages.append(path)
 intro='Winch Law Firm, LLC represents landowners and businesses in matters involving pipeline servitudes, expropriation, and property rights disputes. The firm’s work focuses on ensuring that acquisition efforts proceed through lawful process, transparent valuation, and full respect for private property.'
@@ -60,7 +75,7 @@ page('/thank-you','Request Received | Winch Law Firm','Consultation request conf
 page('/404','Page Not Found | Winch Law Firm','Find the firm’s property rights resources and contact information.','<section class="wrap prose"><h1>Let’s find the right page.</h1><p>This address does not match a page on this website.</p><a class="button" href="/legal-resources">Browse resources</a> <a href="/book-online">Contact the firm</a></section>',True)
 shutil.copyfile(OUT/'404/index.html',OUT/'404.html')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml\n')
-(OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+origin+('' if p=='/' else p)+'</loc></url>' for p in pages)+'</urlset>')
+(OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+page_url(p)+'</loc></url>' for p in pages)+'</urlset>')
 subdomain_urls=['https://entergy.winchlawfirm.com/','https://entergybabelwebre.winchlawfirm.com/','https://businesslegal.winchlawfirm.com/']
 (OUT/'subdomains-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+u+'</loc></url>' for u in subdomain_urls)+'</urlset>')
 (OUT/'_redirects').write_text('/entergy-property-rights-review https://entergy.winchlawfirm.com/ 301\n/entergy-rights-review https://entergy.winchlawfirm.com/ 301\n/notifications /book-online 301\n/profile/justin-winch62979/profile / 301\n/privacy.html /privacy 301\n/thank-you.html /thank-you 301\n')
