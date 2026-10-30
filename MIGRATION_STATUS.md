@@ -187,3 +187,9 @@ VERIFIED October 16, 2026: commit e888f22dddd8e52c27fede3241da6fdc9bb046a6 publi
 PREPARED: directory-page canonical, og:url, Article schema and sitemap URLs now use final trailing slashes. Generated internal page links normalize to the same addresses while preserving query strings and fragments. Existing slashless host redirects remain unchanged. No article body, form submission behavior, specialty site, or preview-only LPSC content changed.
 VERIFIED LOCALLY: build and 14-document structural checks pass, including all 11 sitemap locations matching canonical and og:url. JavaScript syntax passes. Production deployment and live URL verification are pending this commit. Google recrawling/reindexing is not yet verified.
 
+
+## October 29, 2026 — attorney headshot
+User authorized adding his retouched headshot. PREPARED: src-assets/justin-winch.webp (640×800) and justin-winch-avatar.webp (240×240); new "Your attorney" section on the homepage between the path cards and the resources band; small avatar line above the consultation form. Bio copy uses only facts the user has stated (South Louisiana, expropriation/property damage/business litigation, owns land, father a cattle rancher); no outcome claims.
+VERIFIED LOCALLY: build and 14-document checks pass; desktop and 390px mobile screenshots reviewed.
+GA4 baseline captured before publication (property 555762522, Oct 2–29): main / 104 sessions, 67.3% engaged, 4 key events; /west-fork-creek 44; Entergy 34; Babel 28; Business Legal 14.
+Push to GitHub refused from this session (Claude GitHub App not authorized for WINCHLAW). Deployment pending.
