@@ -193,3 +193,7 @@ User authorized adding his retouched headshot. PREPARED: src-assets/justin-winch
 VERIFIED LOCALLY: build and 14-document checks pass; desktop and 390px mobile screenshots reviewed.
 GA4 baseline captured before publication (property 555762522, Oct 2–29): main / 104 sessions, 67.3% engaged, 4 key events; /west-fork-creek 44; Entergy 34; Babel 28; Business Legal 14.
 Push to GitHub refused from this session (Claude GitHub App not authorized for WINCHLAW). Deployment pending.
+
+## October 29, 2026 (night) — headshot live; West Fork Creek routing
+VERIFIED: headshot commit 7697755 published as production deploy 6ae40475fb030f35eb35d413 (ready 02:44Z Oct 30). Live page not loaded from this workspace (host blocked); user to visually confirm.
+PREPARED: gold homepage banner "West Fork Creek / Project Omega landowners: start here" linking /west-fork-creek; attorney photo line with 504-500-1899 under the West Fork Creek hero. User decision: /west-fork-creek stays as the resource page; a separate westforkcreek subdomain funnel is planned (needs DNS + new Netlify site). Coalition not named on any page pending Dustin's written OK.
