@@ -47,4 +47,5 @@ for slug in ['received-utility-right-of-way-offer-letter-louisiana','should-i-si
   assert schema['headline']==s.find('h1').get_text(strip=True)
   assert schema['image']==s.find('meta',property='og:image')['content']
   assert schema['author']['name']=='Winch Law Firm, LLC'
+for f in root.rglob('*.html'):assert 'wixstatic.com' not in f.read_text(),f'{f}: Wix-hosted asset'
 print(f'PASS: {count} HTML documents; internal routes/assets, HTTPS links, metadata, both phone lines, form structure, retained articles, crawl files.')
