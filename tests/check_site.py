@@ -27,7 +27,7 @@ for f in root.rglob('*.html'):
 assert (root/'robots.txt').is_file() and (root/'sitemap.xml').is_file()
 assert 'thank-you' not in (root/'sitemap.xml').read_text()
 locations=[e.text for e in ET.parse(root/'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-assert len(locations)==11 and len(set(locations))==11
+assert len(locations)==12 and len(set(locations))==12
 for location in locations:
  assert location.endswith('/'),f'Redirecting sitemap URL: {location}'
  document=root/urlsplit(location).path.strip('/')/'index.html'
